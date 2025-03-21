@@ -16,6 +16,8 @@ Chiunque voglia usare il format Puccia Linux deve:
 - Adottare **un motto originale e ironico** per ogni edizione
 - Offrire **contenuti liberi, non commerciali e accessibili**
 - Garantire **la presenza reale della puccia** o di un equivalente territoriale
+- Includere opzioni di **puccia vegana o vegetariana**, per garantire un’accoglienza realmente inclusiva
+- Prevedere **bevande, analcoliche e birra**, da offrire durante il momento conviviale
 
 ---
 
