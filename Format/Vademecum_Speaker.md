@@ -15,7 +15,7 @@ Ecco qualche consiglio per prepararti e partecipare al meglio all’evento.
 
 ## 🖥️ Slide: semplici e leggibili
 
-- Usa il **template ufficiale** (appena disponibile)
+- Usa il **template ufficiale**
 - Evita muri di testo: meglio parole chiave, immagini, concetti semplici
 - Se mostri codice: grande, leggibile, con esempi pratici
 - **Le slide e un breve abstract vanno inviati almeno 48 ore prima** dell'evento all'organizzazione, per poter organizzare la scaletta e presentarti al meglio
