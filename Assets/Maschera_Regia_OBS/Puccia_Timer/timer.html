@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Timer Puccia Linux</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      transition: color 1s linear;
+    }
+
+    #phase {
+      font-size: 3vw;
+      margin-bottom: 2vh;
+      color: white;
+    }
+
+    #timer {
+      font-size: 10vw;
+      color: #00ff00;
+    }
+
+    #restart {
+      margin-top: 5vh;
+      padding: 10px 20px;
+      font-size: 2vw;
+      background-color: #222;
+      color: white;
+      border: 2px solid #00ff00;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #restart:hover {
+      background-color: #00ff00;
+      color: black;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="phase">Talk in corso</div>
+  <div id="timer">15:00</div>
+  <button id="restart">Riavvia Timer</button>
+
+  <!-- Musica da ascensore -->
+  <audio id="elevator" loop>
+    <source src="elevator.wav" type="audio/wav">
+    Il tuo browser non supporta l'audio.
+  </audio>
+
+  <!-- Suono del gong -->
+  <audio id="gong">
+    <source src="gong.wav" type="audio/wav">
+    Il tuo browser non supporta l'audio.
+  </audio>
+
+  <script>
+    const TALK_TIME = 15 * 60;
+    const BREAK_TIME = 2 * 60;
+
+    const timerDisplay = document.getElementById('timer');
+    const phaseDisplay = document.getElementById('phase');
+    const elevator = document.getElementById('elevator');
+    const gong = document.getElementById('gong');
+    const restartButton = document.getElementById('restart');
+
+    let isTalk = true;
+    let timeLeft = TALK_TIME;
+    let timerID = null;
+
+    function lerpColor(a, b, amount) {
+      const ah = parseInt(a.replace(/#/g, ''), 16),
+            ar = ah >> 16, ag = ah >> 8 & 0xff, ab = ah & 0xff,
+            bh = parseInt(b.replace(/#/g, ''), 16),
+            br = bh >> 16, bg = bh >> 8 & 0xff, bb = bh & 0xff,
+            rr = ar + amount * (br - ar),
+            rg = ag + amount * (bg - ag),
+            rb = ab + amount * (bb - ab);
+      return '#' + (((1 << 24) + (Math.round(rr) << 16) + (Math.round(rg) << 8) + (Math.round(rb))).toString(16).slice(1));
+    }
+
+    function updateDisplay() {
+      const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+      const seconds = String(timeLeft % 60).padStart(2, '0');
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+
+      if (isTalk) {
+        const progress = 1 - (timeLeft / TALK_TIME);
+        const color = lerpColor('#00ff00', '#ff0000', progress);
+        timerDisplay.style.color = color;
+      }
+    }
+
+    function updateTimer() {
+      updateDisplay();
+
+      if (timeLeft > 0) {
+        timeLeft--;
+        timerID = setTimeout(updateTimer, 1000);
+      } else {
+        gong.play(); // Suona il gong
+        isTalk = !isTalk;
+
+        if (!isTalk) {
+          // Inizia la musica da ascensore dopo il gong
+          setTimeout(() => {
+            elevator.play();
+          }, 1000); // attesa 1 secondo
+        } else {
+          elevator.pause();
+          elevator.currentTime = 0;
+        }
+
+        if (isTalk) {
+          phaseDisplay.textContent = 'Talk in corso';
+          timerDisplay.style.color = '#00ff00';
+          timeLeft = TALK_TIME;
+        } else {
+          phaseDisplay.textContent = 'Pausa';
+          timerDisplay.style.color = '#ffff00';
+          timeLeft = BREAK_TIME;
+        }
+
+        timerID = setTimeout(updateTimer, 1000);
+      }
+    }
+
+    function restartTimer() {
+      clearTimeout(timerID);
+      isTalk = true;
+      timeLeft = TALK_TIME;
+      phaseDisplay.textContent = 'Talk in corso';
+      timerDisplay.style.color = '#00ff00';
+      elevator.pause();
+      elevator.currentTime = 0;
+      updateDisplay();
+      updateTimer();
+    }
+
+    restartButton.addEventListener('click', restartTimer);
+
+    // Avvio iniziale
+    updateTimer();
+  </script>
+</body>
+</html>
