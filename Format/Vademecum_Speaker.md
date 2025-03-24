@@ -8,8 +8,8 @@ Ecco qualche consiglio per prepararti e partecipare al meglio all’evento.
 ## ⏱️ Tempo: massimo 15 minuti
 
 - Hai a disposizione **15 minuti**, non uno di più!
-- C'è un timer proiettato visibile anche per te (es: [bigtimer.net](https://bigtimer.net))
-- Se sfori... il Presentatore ti guarda male (e ti taglia!)
+- C'è un timer proiettato visibile anche per te
+- Se sfori... il Presentatore ti guarda male e la campanella ti spedisce nel regno delle ombre (cit. Yu-Gi-Oh)
 
 ---
 
