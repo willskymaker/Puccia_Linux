@@ -4,6 +4,8 @@ Questa cartella contiene la **maschera regia** per gestire la proiezione e la sc
 
 > ✅ Timer visivo, suoni inclusi, maschera proiettabile e pronta all’uso!
 
+Repo ufficiale: [github.com/willskymaker/Puccia_Linux](https://github.com/willskymaker/Puccia_Linux/tree/main/Assets/Maschera_Regia_OBS)
+
 ---
 
 ## 📂 Contenuto
@@ -11,6 +13,7 @@ Questa cartella contiene la **maschera regia** per gestire la proiezione e la sc
 - `timer.html` – Timer ciclico con fasi **Talk (15 min)** e **Pausa (2 min)**
 - `elevator.wav` – Musica da ascensore (loop durante la pausa)
 - `gong.wav` – Suono di **campanella** al cambio fase
+- `lavagna.jpg` – Sfondo principale della scena OBS
 - `Maschera_Regia_OBS.json` – Collezione di scena OBS esportata
 - `README.md` – Questo file
 
@@ -39,28 +42,28 @@ Questa cartella contiene la **maschera regia** per gestire la proiezione e la sc
    ```
    Esempio:
    ```
-   file:///C:/Users/TuoNome/Desktop/Maschera_Regia_Obs/timer.html
+   file:///C:/Users/TuoNome/Desktop/Maschera_Regia_OBS/timer.html
    ```
 3. Imposta dimensioni (es. 1920x1080)
 4. Usa la scena come sfondo visivo per la regia
 
 ---
 
-## 🔁 Alternativa: Importare la collezione OBS
+## 🔁 Importare la collezione OBS
 
 Puoi importare la collezione `Maschera_Regia_OBS.json` per avere subito pronta la scena:
 
 - In OBS → **File → Collezioni di scene → Importa**
 - Seleziona il file `Maschera_Regia_OBS.json`
-- Verifica che le sorgenti locali (immagini, timer.html, audio) siano correttamente collegate
+- Verifica che le sorgenti locali (immagini, `timer.html`, audio) siano correttamente collegate
 
 ### 📺 Scene e sorgenti configurate:
-- Scena principale: `Puccia_Live`
-- Sorgenti incluse:
-  - **Immagine**: sfondo (`lavagna.jpg`)
-  - **Browser**: `timer.html` in locale
-  - **Cattura schermo (PipeWire)`**: per proiettare eventuali contenuti dal desktop
-- Transizione attiva: **Dissolvenza** (300ms)
+- **Scena principale**: `Puccia_Live`
+- **Sorgenti**:
+  - `lavagna.jpg` (sfondo)
+  - `timer.html` (Browser Source con countdown)
+  - Cattura schermo (PipeWire) per proiettare slide o contenuti dal desktop
+- **Transizione attiva**: Dissolvenza (300ms)
 
 ---
 
@@ -69,7 +72,13 @@ Puoi importare la collezione `Maschera_Regia_OBS.json` per avere subito pronta l
 - OBS Studio (v29 o superiore consigliato)
 - Browser moderno (per aprire `timer.html` anche fuori da OBS)
 - Supporto audio `.wav` abilitato nel browser o in OBS
-- File `lavagna.jpg` presente nel percorso previsto, oppure da riconfigurare
+- I file devono essere nel percorso corretto o ri-selezionati dopo l'importazione
+
+---
+
+## 🤝 Come contribuire
+
+Hai suggerimenti, migliorie o vuoi adattare la maschera per altri eventi? Fai una **pull request** o apri una issue su [GitHub](https://github.com/willskymaker/Puccia_Linux).
 
 ---
 
