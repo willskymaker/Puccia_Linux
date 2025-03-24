@@ -4,7 +4,7 @@ Questa cartella contiene la **maschera regia** per gestire la proiezione e la sc
 
 > ✅ Timer visivo, suoni inclusi, maschera proiettabile e pronta all’uso!
 
-Repo ufficiale: [github.com/willskymaker/Puccia_Linux](https://github.com/willskymaker/Puccia_Linux/tree/main/Assets/Maschera_Regia_OBS)
+Repo ufficiale: [github.com/willskymaker/Puccia\_Linux](https://github.com/willskymaker/Puccia_Linux/tree/main/Assets/Maschera_Regia_OBS)
 
 ---
 
@@ -26,6 +26,7 @@ Repo ufficiale: [github.com/willskymaker/Puccia_Linux](https://github.com/willsk
    - Allo scadere: **suona una campanella**
 2. Inizia automaticamente una **pausa di 2 minuti**
    - Parte musica da ascensore in **loop**
+   - Al termine: nuova **campanella**
 3. Il ciclo riparte in automatico
 4. Include un pulsante **"Riavvia Timer"** per ricominciare in qualsiasi momento
 
@@ -55,9 +56,12 @@ Puoi importare la collezione `Maschera_Regia_OBS.json` per avere subito pronta l
 
 - In OBS → **File → Collezioni di scene → Importa**
 - Seleziona il file `Maschera_Regia_OBS.json`
-- Verifica che le sorgenti locali (immagini, `timer.html`, audio) siano correttamente collegate
+
+> 🛠️ I percorsi dei file sono già configurati per seguire la struttura del repository GitHub (`Assets/Maschera_Regia_OBS/...`).
+> Assicurati solo di mantenere intatta la struttura delle cartelle quando cloni o scarichi il repo.
 
 ### 📺 Scene e sorgenti configurate:
+
 - **Scena principale**: `Puccia_Live`
 - **Sorgenti**:
   - `lavagna.jpg` (sfondo)
@@ -72,7 +76,7 @@ Puoi importare la collezione `Maschera_Regia_OBS.json` per avere subito pronta l
 - OBS Studio (v29 o superiore consigliato)
 - Browser moderno (per aprire `timer.html` anche fuori da OBS)
 - Supporto audio `.wav` abilitato nel browser o in OBS
-- I file devono essere nel percorso corretto o ri-selezionati dopo l'importazione
+- È importante mantenere la stessa struttura delle cartelle del repo
 
 ---
 
@@ -84,13 +88,14 @@ Hai suggerimenti, migliorie o vuoi adattare la maschera per altri eventi? Fai un
 
 ## 📄 Licenza
 
-Questa maschera è rilasciata sotto licenza **CC BY-SA 4.0**.  
+Questa maschera è rilasciata sotto licenza **CC BY-SA 4.0**.\
 Può essere modificata, adattata e riutilizzata citando la fonte.
 
 ---
 
 ## 🙌 Autori
 
-Realizzata da William e il team **Puccia Linux**  
+Realizzata da William e il team **Puccia Linux**\
 Contributi e modifiche sono benvenuti!
+
 
