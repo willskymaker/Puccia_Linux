@@ -24,11 +24,11 @@
 - Regole dei talk (durata, timer, no interruzioni)
 - Ringraziamenti partner/sponsor
 
-### 3. Sessione Talk (durata: ~1h 15min)
-- Fino a 5 talk consecutivi, **15 minuti** ciascuno
-- Timer visibile su schermo (es. bigtimer.net)
-- Nessuna pausa tra un talk e l'altro
-
+### 3. Sessione Talk (durata: ~1H-30 - 2h 15 min)
+- Fino a 5-7 talk consecutivi, **15 minuti** ciascuno
+- Timer visibile su schermo ('Puccia_Linux/Assets/Maschera_Regia_OBS/Puccia_Timer/timer.html')
+- Pausa tecnica di massimo 2 minuti tra un talk e l'altro
+ 
 ### 4. Q&A + Microfono Aperto (durata: ~20 minuti)
 - Domande libere ai relatori
 - Interventi spontanei del pubblico
@@ -66,7 +66,7 @@
 ## 🏰 Kit replicabile
 
 - Template slide ufficiale
-- Timer online ([bigtimer.net](https://bigtimer.net))
+- Timer
 - Foglio del presentatore con intro, battute e scaletta
 - Locandina base in formato modificabile
 - Modulo Pretix per prenotazioni
